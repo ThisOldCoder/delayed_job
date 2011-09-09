@@ -358,7 +358,7 @@ shared_examples_for 'a delayed_job backend' do
       before do
         # reset defaults
         Delayed::Worker.destroy_failed_jobs = true
-        Delayed::Worker.max_attempts = 25
+        Delayed::Worker.max_attempts = 250
 
         @job = Delayed::Job.enqueue(ErrorJob.new)
       end
